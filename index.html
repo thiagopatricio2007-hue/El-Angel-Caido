@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL ANGEL CAIDO</title>
+  <audio id="clic" src="https://www.myinstants.com/media/sounds/minecraft_click.mp3"></audio>
+<link rel="stylesheet" href="Game.css">
+</head>
+<body>
+   <audio id="musicaFondo" autoplay loop>
+    <source src="Foxy Shazam - Oh Lord __ Sub. Español - Nosfrandamus.mp3" type="audio/mpeg">
+  </audio>
+  <nav>
+      <button onclick="toggleMenu('lang-menu')">🌐</button>
+      <div id="lang-menu">
+        <ul class="language-selector">
+          <li onclick="cambiarIdioma('es')">Español</li>
+          <li onclick="cambiarIdioma('en')">English</li>
+          <li onclick="cambiarIdioma('fr')">Français</li>
+        </ul>
+      </div>
+    </div>
+      <button onclick="toggleMenu('login-form')">INICIAR SESIÓN</button>
+      <button onclick="toggleMenu('register-form')" style="background:#b69f67; border:none; padding:8px 12px; border-radius:6px; margin-left:8px; color:#000; font-weight:bold;">REGISTRARSE</button>
+      <form id="login-form" class="form-container" onsubmit="event.preventDefault(); alert('Login simulado');">
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+      </form>
+      <form id="register-form" class="form-container" onsubmit="event.preventDefault(); alert('Registro simulado');">
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+  </nav>
+  <div id="pantalla-inicial">
+    <div class="contenido-presentacion">
+      <h1>The Fallen Angel</h1>
+      <p><strong>Lucas Pérez</strong> – Programador</p>
+      <p><strong>Máximo Cervantes</strong> – Diseñador/Servidor</p>
+      <p><strong>Valentín Medina</strong> – Guionista</p>
+      <p><strong>Thiago Dirito</strong> – Programador HTML</p>
+      <p><strong>Fiorella Mazziotti</strong> – Map 3D</p>
+      <p><strong>Yapura Morena</strong> – Sprites</p>
+      <p><strong>Maximiliano Gutiérrez</strong> – Sonido</p>
+      <button id="boton-continuar">Continuar</button>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <header>
+      <h1 id="titulo" style="animation: brilloTitulo 2s infinite alternate;">EL ANGEL CAIDO</h1>
+    </header>
+    <aside id="side-buttons">
+      <button onclick="mostrarInfo('Lucas Pérez — Programador principal'); mostrarDetail('detail-1')">PROGRAMACION</button>
+      <button onclick="mostrarInfo('Diseñador de Sprites — Máximo'); mostrarDetail('detail-2')">PERSONAJES</button>
+      <button onclick="mostrarInfo('Diseñadora mapa 3D — Fiorella'); mostrarDetail('detail-4')">MAPAS</button>
+      <button onclick="mostrarInfo('Sonido y música — Maximiliano'); mostrarDetail('detail-5')">ENEMIGOS</button>
+    </aside>
+    <article id="info-box" role="status" aria-live="polite">
+      <p id="info-default"> CAP3 en un callejón remoto un caballero despertó, este confundido por no reconocer donde esta se levantaría para encontrar pistas,
+un alma desamparada pediría ayuda al caballero pero este desconfiado la amenazaría, el alma intentaría convencer al caballero,
+este con dudas aceptaría ayudar y ahora seria acompañado por el alma a descubrir que lo ancla a esta ciudad
+</p>
+    </article>
+    <section id="extra-boxes" aria-label="Recados">
+      <article class="cuadro"><p>CAP 1
+Fox, un zorro de aspecto citadino, dónde su único labor y trabajo era reparar televisiones en 
+la gran maximundo, un día reparando una tele vieja (traído por un tipo extraño), 
+la television empieza a hacer cosas extrañas y es succionado por ella,
+siendo transportado a un campo de girasoles parlanchines, 
+estos siendo asombrados por su presencia.</p></article>
+      <article class="cuadro"><p>CAP2
+En lo profundo de un bosque olvidado, un pequeño slime absorbe a un humano y despierta con mente e instinto. Una voz atrapada clama ayuda desde una ciudad desconocida. Con inocencia y curiosidad, el slime cruza un portal esmeralda que lo lanza a una aventura llena de enigmas, peligros y decisiones que definirán su destino.</p></article>
+    </section>
+    <section id="historia">
+      <h2 id="historia-title">La historia</h2>
+      <p id="historia-text">hubo una vez que un ser angelical bajo de los cielos para "salvar" al mundo.
+este ser fue traicionado y encerrado por los seres humanos.
+los seres mas inteligentes se dieron cuenta que el angel irradiaba una fuerte energía.
+ellos dividieron al angel en objetos que darían energía a su mundo.
+pero esta energía trajo desgracia al mundo, haciendo que los seres mutaran en criaturas distintas.
+algunas siendo mas dóciles, otras siendo mas agresivas y unas pocas manteniendo su cuerpo mortal.
+ahora en el 21XX después del uso de los poderes del angel la tierra se terraformaria en un super continente
+conllevando que el angel busque la ayuda de 3 campeones para ser liberado de las garras de la humanidad.</p>
+    </section>
+
+    <section id="caracteristicas">
+      <h2 id="caracteristicas-title">Características principales</h2>
+      <ul>
+        <li id="c1">🌑 TRES MAPAS DISTINTOS SEMI ABIERTOS</li>
+        <li id="c2">⚔️ ESTILO DE COMBATE ESTILO POR TURNOS TIPO POKEMON  </li>
+        <li id="c3">🕊️ SOUNDTRACK ORIGINAL CREADO POR MAXIMILIANO</li>
+        <li id="c4">📜EXPERIENCIA DIVIDIDA VIDEOJUEGOS </li>
+      </ul>
+    </section>
+
+    <section id="galeria">
+      <h2 id="galeria-title">Imágenes</h2>
+      <figure>
+        <img src="Sin título11.jpg" alt="Escena 1" style="max-width:360px;">
+        <figcaption>Escena principal.</figcaption>
+      </figure>
+      <figure>
+        <img src="Sin título10.jpg" alt="Escena 2" style="max-width:360px;">
+        <figcaption>Ambiente oscuro.</figcaption>
+      </figure>
+    </section>
+
+    <section id="progreso">
+      <h2 id="progreso-title">Progreso del desarrollo</h2>
+      <details>
+        <summary>Estado actual</summary>
+        <p id="progreso-text">esta en pleno desarrollo y estimamos que lo tendremos completo en 1 mes o mas y tenemos muchas mas cosas que mostrar para la parte final solo esperen</p>
+      </details>
+    </section>
+
+    <section id="contacto">
+      <h2 id="contacto-title">¿Querés recibir novedades?</h2>
+      <input id="correo-placeholder" type="email" placeholder="Tu correo electrónico" style="padding:10px; border-radius:6px;">
+      <button id="boton-enviar" style="padding:10px 16px; margin-left:8px; background:#b69f67; border:none; color:#000; border-radius:6px;">Enviar</button>
+      <address style="margin-top:12px;">
+        Contacto: contacto@angelcaido.com<br>
+        Dirección: Calle FASA 124, Buenos Aires
+      </address>
+    </section>
+    <section id="detail-1" class="detail-section" aria-hidden="true">
+      <h2>Lucas Pérez — Programador</h2>
+      <p>Información detallada sobre Lucas, funciones, screenshots y enlaces.</p>
+      <img src="Sin título3.jpg" alt="Bar Sardina 3D">
+     <img src="Sin título4.jpg" alt="Bar Sardina 3D">
+     <img src="Sin título5.jpg" alt="Bar Sardina 3D">
+    </section>
+
+    <section id="detail-2" class="detail-section" aria-hidden="true">
+      <h2>Máximo — Diseñador de sprites</h2>
+      <p>Galería de sprites, proceso de trabajo y herramientas usadas.</p>
+        <img src="Sin título7.jpg" alt="Bar Sardina 3D">
+        <img src="Sin título8.jpg" alt="Bar Sardina 3D">
+    </section>
+ </section>
+
+    <section id="detail-4" class="detail-section" aria-hidden="true">
+      <h2>Fiorella — Map 3D</h2>
+      <p>Capturas del mapa, workflow y herramientas (Blender/Unity etc.).</p>
+      <img src="Sin título1.jpg" alt="Bar Sardina 3D">
+      <img src="Sin título.jpg" alt="Bar Sardina 3D">
+      <img src="Sin título2.jpg" alt="Bar Sardina 3D">
+    </section>
+
+    <section id="detail-5" class="detail-section" aria-hidden="true">
+      <h2>ENEMIGOS DESTACADOS</h2>
+      <p>MOSTRAMOS ALGUNOS DE NUESTROS MEJORES DISEÑOS DE VILLANOS</p>
+      <img src="https://st4.depositphotos.com/38874124/41022/v/450/depositphotos_410228846-stock-illustration-vector-pixel-monster-illustration-of.jpg" alt="Audio">
+      <img src="https://pm1.aminoapps.com/6902/f3143d92375ca89f5f2f585780d5dfa1e9f78da1r1-720-562v2_hq.jpg" alt="Audio">
+    </section>
+
+  </main>
+  <aside id="ad-container" aria-hidden="false">
+    <img id="ad-image" src="https://i.pinimg.com/736x/26/d1/ce/26d1ce7b699eb87669441b9f8338bfab.jpg" alt="Anuncio">
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 El Ángel Caído - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function toggleMenu(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function mostrarInfo(texto) {
+      const box = document.getElementById('info-box');
+      box.classList.remove('hide');
+      setTimeout(() => {
+        box.innerHTML = `<p>${texto}</p>`;
+        box.classList.add('hide');
+      }, 120);
+    }
+
+    function cambiarIdioma(idioma) {
+      const traducciones = {
+        es: { titulo: "EL ANGEL CAIDO", info: "Tocá un botón..." },
+        en: { titulo: "THE FALLEN ANGEL", info: "Click a button..." },
+        fr: { titulo: "L'ANGE DÉCHU", info: "Cliquez sur un bouton..." }
+      };
+      const t = traducciones[idioma] || traducciones.es;
+      document.getElementById('titulo').innerText = t.titulo;
+      document.getElementById('info-box').innerHTML = `<p id="info-default">${t.info}</p>`;
+    }
+
+    function mostrarDetail(id) {
+      document.querySelectorAll('.detail-section').forEach(sec => {
+        sec.classList.remove('active');
+        sec.setAttribute('aria-hidden','true');
+      });
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        target.setAttribute('aria-hidden','false');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.getElementById('boton-continuar').addEventListener('click', () => {
+      document.getElementById('pantalla-inicial').style.display = 'none';
+      document.getElementById('musica-fondo').play().catch(()=>{  });
+    });
+    document.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => {
+        const s = document.getElementById('clic');
+        if(s){ s.currentTime = 0; s.play().catch(()=>{}); }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cuadro').forEach((c,i) => {
+        setTimeout(()=> c.classList.add('show'), 300 + i*120);
+      });
+      setTimeout(()=> { const p = document.getElementById('pantalla-inicial'); if(p) p.style.display='none'; }, 10000);
+    });
+
+    const adImages = [
+      "Sin título6.jpg",
+      "Sin título9.jpg",
+      "https://i.pinimg.com/originals/fe/11/3b/fe113b351de387646ccf7e58139950e4.jpg"
+    ];
+    let currentAd = 0;
+    const adImageElement = document.getElementById('ad-image');
+    setInterval(() => {
+      currentAd = (currentAd + 1) % adImages.length;
+      adImageElement.style.opacity = 0;
+      setTimeout(() => {
+        adImageElement.src = adImages[currentAd];
+        adImageElement.style.opacity = 1;
+      }, 900);
+    }, 4000);
+       window.addEventListener('load', () => {
+      const musica = document.getElementById('musicaFondo');
+      musica.volume = 0.5;
+
+      const playPromise = musica.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          document.addEventListener('click', () => {
+            musica.play();
+          }, { once: true });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
