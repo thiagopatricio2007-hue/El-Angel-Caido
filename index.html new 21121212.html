@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL ANGEL CAIDO</title>
+  <style>
+    @keyframes fondoOscuro {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    @keyframes brilloTitulo {
+      from { text-shadow: 0 0 10px #b69f67; }
+      to   { text-shadow: 0 0 30px #fff600; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: radial-gradient(#1a1a1a, #0b0b0b);
+      background-size: cover;
+      animation: fondoOscuro 20s infinite alternate;
+      color: #e4d6b5;
+      overflow-x: hidden;
+    }
+
+    nav { background: #0b0b0b; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #b69f67; position: sticky; top: 0; z-index: 999; }
+    nav button { background: none; border: none; color: #e4d6b5; font-size: 16px; cursor: pointer; }
+    nav div > div { position: absolute; top: 30px; background: #fff; color: #000; border: 1px solid #ccc; z-index: 1000; display: none; }
+    nav ul { list-style: none; margin: 0; padding: 10px; }
+    nav li { margin: 4px 0; cursor: pointer; }
+
+    header { text-align: center; padding: 40px 20px; }
+    h1 { font-weight: 500; letter-spacing: 2px; }
+
+    #info-box { 
+      max-width: 600px; 
+      margin: 20px auto; 
+      padding: 1rem; 
+      background: rgba(255, 255, 255, 0.05); 
+      border: 1px solid #b69f67; 
+      border-radius: 8px; 
+      min-height: 100px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    #info-box.show { opacity: 1; }
+
+    #side-buttons { position: fixed; top: 50%; left: 10px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; }
+    #side-buttons button {
+      background: #1b1a17;
+      color: #e4d6b5;
+      border: 1px solid #b69f67;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #side-buttons button:hover {
+      background: #3b3a36;
+      transform: scale(1.05);
+      box-shadow: 0 0 8px #b69f67;
+    }
+
+    #extra-boxes { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+    .cuadro { 
+      background: rgba(255, 255, 255, 0.05); 
+      border: 1px solid #b69f67; 
+      border-radius: 8px; 
+      width: 300px; 
+      height: 200px; 
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .cuadro.show { opacity: 1; transform: translateY(0); }
+
+    section { padding: 40px 20px; text-align: center; }
+    section h2 { margin-bottom: 20px; }
+    section ul { list-style: none; padding: 0; }
+    section ul li { margin: 10px 0; }
+    section img { max-width: 300px; margin: 10px; border: 1px solid #b69f67; border-radius: 8px; }
+
+    #ad-container {
+      position: fixed;
+      right: 20px;
+      top: 150px;
+      width: 250px;
+      height: 400px;
+      border: 2px solid #b69f67;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #ad-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #0b0b0b;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #b69f67;
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <div style="position: relative;">
+      <button onclick="toggleMenu('lang-menu')">🌐</button>
+      <div id="lang-menu">
+        <ul class="language-selector">
+          <li onclick="cambiarIdioma('es')">Español</li>
+          <li onclick="cambiarIdioma('en')">English</li>
+          <li onclick="cambiarIdioma('fr')">Français</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <header>
+      <h1 id="titulo" style="animation: brilloTitulo 2s infinite alternate;">EL ANGEL CAIDO</h1>
+    </header>
+
+    <aside id="side-buttons">
+      <button onclick="mostrarInfo('Información del Botón 1')">Botón 1</button>
+      <button onclick="mostrarInfo('Información del Botón 2')">Botón 2</button>
+      <button onclick="mostrarInfo('Información del Botón 3')">Botón 3</button>
+      <button onclick="mostrarInfo('Información del Botón 4')">Botón 4</button>
+      <button onclick="mostrarInfo('Información del Botón 5')">Botón 5</button>
+      <button onclick="mostrarInfo('Información del Botón 6')">Botón 6</button>
+    </aside>
+
+    <article id="info-box">
+      <p id="info-default">Tocá un botón para ver información aquí...</p>
+    </article>
+
+   
+    <section id="extra-boxes">
+      <article class="cuadro"><p>Cuadro izquierdo</p></article>
+      <article class="cuadro"><p>Cuadro derecho</p></article>
+    </section>
+
+    <section id="historia">
+      <h2 id="historia-title">La historia</h2>
+      <p id="historia-text">Hace siglos, un ángel fue desterrado... <mark>Este fue un evento clave</mark>.</p>
+      <time datetime="1400-01-01">Año 1400</time>
+    </section>
+
+    <section id="caracteristicas">
+      <h2 id="caracteristicas-title">Características principales</h2>
+      <ul>
+        <li id="c1">🌑 Mundo abierto oscuro y peligroso</li>
+        <li id="c2">⚔️ Combate cuerpo a cuerpo con estilo souls-like</li>
+        <li id="c3">🕊️ Elecciones morales: redención o destrucción</li>
+        <li id="c4">📜 Árbol de habilidades y personalización</li>
+      </ul>
+    </section>
+
+    <section id="galeria">
+      <h2 id="galeria-title">Imágenes</h2>
+      <figure>
+        <img src="https://i.imgur.com/3z8D1kf.jpg" alt="Imagen 1">
+        <figcaption>Una de las escenas principales</figcaption>
+      </figure>
+      <figure>
+        <img src="https://i.imgur.com/FDmUCq2.jpg" alt="Imagen 2">
+        <figcaption>Ambiente oscuro del juego</figcaption>
+      </figure>
+    </section>
+
+    <section id="progreso">
+      <h2 id="progreso-title">Progreso del desarrollo</h2>
+      <details>
+        <summary>Estado actual</summary>
+        <p id="progreso-text">Actualmente en fase de prototipo...</p>
+      </details>
+    </section>
+
+    <section id="contacto">
+      <h2 id="contacto-title">¿Querés recibir novedades?</h2>
+      <input id="correo-placeholder" type="email" placeholder="Tu correo electrónico" />
+      <button id="boton-enviar">Enviar</button>
+      <address>
+        Contacto: contacto@angelcaido.com <br>
+        Dirección: Calle Falsa 123, Buenos Aires
+      </address>
+    </section>
+  </main>
+  <aside id="ad-container">
+    <img id="ad-image" src="https://i.pinimg.com/736x/26/d1/ce/26d1ce7b699eb87669441b9f8338bfab.jpg" alt="Anuncio Coca Cola">
+  </aside>
+  <footer>
+    <p>&copy; 2025 El Ángel Caído - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function toggleMenu(id) {
+      const menu = document.getElementById(id);
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function mostrarInfo(texto) {
+      const box = document.getElementById('info-box');
+      box.classList.remove("show");
+      setTimeout(() => {
+        box.innerHTML = `<p>${texto}</p>`;
+        box.classList.add("show");
+      }, 100);
+    }
+
+    function cambiarIdioma(idioma) {
+      const traducciones = {
+        es: { titulo: "EL ANGEL CAIDO", info: "Tocá un botón...", historia: "La historia", historiaTxt: "Hace siglos...", caracteristicas: "Características principales", c1:"🌑 Mundo abierto oscuro y peligroso", c2:"⚔️ Combate cuerpo a cuerpo con estilo souls-like", c3:"🕊️ Elecciones morales: redención o destrucción", c4:"📜 Árbol de habilidades y personalización", galeria:"Imágenes", progreso:"Progreso del desarrollo", progresoTxt:"Actualmente en fase de prototipo...", contacto:"¿Querés recibir novedades?", correo:"Tu correo electrónico", enviar:"Enviar"},
+        en: { titulo: "THE FALLEN ANGEL", info: "Click a button...", historia: "The story", historiaTxt: "Centuries ago...", caracteristicas:"Main Features", c1:"🌑 Dark and dangerous open world", c2:"⚔️ Souls-like close combat", c3:"🕊️ Moral choices", c4:"📜 Skill tree and customization", galeria:"Images", progreso:"Development progress", progresoTxt:"Currently in prototype phase...", contacto:"Want to get updates?", correo:"Your email address", enviar:"Submit"},
+        fr: { titulo: "L'ANGE DÉCHU", info: "Cliquez sur un bouton...", historia: "L'histoire", historiaTxt: "Il y a des siècles...", caracteristicas:"Caractéristiques principales", c1:"🌑 Monde ouvert sombre", c2:"⚔️ Combat rapproché souls-like", c3:"🕊️ Choix moraux", c4:"📜 Arbre de compétences", galeria:"Images", progreso:"Progrès du développement", progresoTxt:"Actuellement en phase de prototype...", contacto:"Souhaitez-vous recevoir des nouvelles ?", correo:"Votre adresse e-mail", enviar:"Envoyer"}
+      };
+      const t = traducciones[idioma];
+      document.getElementById('titulo').innerText = t.titulo;
+      document.getElementById('info-box').innerHTML = `<p id='info-default'>${t.info}</p>`;
+      document.getElementById('historia-title').innerText = t.historia;
+      document.getElementById('historia-text').innerText = t.historiaTxt;
+      document.getElementById('caracteristicas-title').innerText = t.caracteristicas;
+      document.getElementById('c1').innerText = t.c1;
+      document.getElementById('c2').innerText = t.c2;
+      document.getElementById('c3').innerText = t.c3;
+      document.getElementById('c4').innerText = t.c4;
+      document.getElementById('galeria-title').innerText = t.galeria;
+      document.getElementById('progreso-title').innerText = t.progreso;
+      document.getElementById('progreso-text').innerText = t.progresoTxt;
+      document.getElementById('contacto-title').innerText = t.contacto;
+      document.getElementById('correo-placeholder').placeholder = t.correo;
+      document.getElementById('boton-enviar').innerText = t.enviar;
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".cuadro").forEach(c => {
+        setTimeout(() => c.classList.add("show"), 300);
+      });
+    });
+    const adImages = [
+      "https://i.pinimg.com/736x/26/d1/ce/26d1ce7b699eb87669441b9f8338bfab.jpg",
+      "https://i.pinimg.com/originals/bf/ec/bb/bfecbbdbf4ac892b93ab2bd5ae6be559.jpg",
+      "https://worldoftanks.com/static/6.10.3_e81590/wotp_static/img/download_game/frontend/scss/img/sharing.jpg"
+    ];
+    let currentAd = 0;
+    const adImageElement = document.getElementById("ad-image");
+
+    setInterval(() => {
+      currentAd = (currentAd + 1) % adImages.length;
+      adImageElement.style.opacity = 0;
+      setTimeout(() => {
+        adImageElement.src = adImages[currentAd];
+        adImageElement.style.opacity = 1;
+      }, 1000);
+    }, 4000);
+  </script>
+</body>
+</html>
